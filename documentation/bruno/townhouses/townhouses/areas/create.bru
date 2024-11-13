@@ -4,8 +4,31 @@ meta {
   seq: 1
 }
 
-get {
-  url: http://localhost:8081/townhouses/area
-  body: none
-  auth: none
+post {
+  url: http://localhost:8081/common_area
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eV9tb2RlbCIsInN1YiI6IjEiLCJleHAiOjE3MzE1Mjg1MzUsImlhdCI6MTczMTUyNDkzNX0.krXqzfB7YLwASP8puCxuUp7zNS8N92iBjk68Gz8BX-xmwq9uUdZQgoT5sEwy1LfRCT_teR9rmxTa6nzoSsDr6t_y7rHyQBD351ASTPgRDVfWo7fp_1QsyiWK3Xfmpxl58p2Dt898NeLNb5fI36HUsnEawWn83HA0dW1u-xmNyDz2GmKJHZLswQr6KHsJbK6A4JzwOaydWUKcXFFSG4JKCWRDsctXJEUz6U1wkukDj01x1WtX8eZXm2g32E0qhDSsWahTkY5MuHlpbZWm1UaUJk20QcGTJSEtNogIEgEO49zdSYa7WY75kjx_dIJ92cyXTe-pap-FjrjsVr7ISKuf9Q
+}
+
+body:json {
+  {
+    "townhouses": {
+      "id": 1
+    },
+    "name": "Salão de Festas",
+    "description": "Espaço para eventos sociais com capacidade para até 50 pessoas.",
+    "capacity": 50,
+    "availability": true,
+    "openingHours": "10:00:00",
+    "closingHours": "22:00:00",
+    "rules": "Uso permitido até às 22h. Proibido som alto após as 20h.",
+    "maintenanceStatus": "OPEN",
+    "availableResources": "Mesas, cadeiras, cozinha equipada, ar condicionado",
+    "reservationFee": 150.00,
+    "imageUrl": "https://example.com/images/salao-de-festas.jpg"
+  }
 }

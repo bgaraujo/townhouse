@@ -1,0 +1,32 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: 
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "fullName": "Carlos da Silva",
+    "documents": [
+      {
+        "documentType": "RG",
+        "documentNumber": "123456789"
+      },
+      {
+        "documentType": "CPF",
+        "documentNumber": "98765432100"
+      }
+    ],
+    "entryDateTime": "2024-11-13T14:30:00",
+    "exitDateTime": "2024-11-13T17:00:00",
+    "unitId": 305,
+    "authorizationStatus": "AUTHORIZED",
+    "notes": "Permitido acesso somente ao salão de festas."
+  }
+}

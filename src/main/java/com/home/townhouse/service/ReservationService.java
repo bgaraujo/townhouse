@@ -9,6 +9,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class ReservationService {
 
@@ -21,7 +23,8 @@ public class ReservationService {
         Reservation reservation = modelMapper.map(reservationDTO, Reservation.class);
 
         Jwt jwt = (Jwt) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        jwt.getSubject();
+        reservation.setPersonId(UUID.fromString(jwt.getSubject()));
+        reservation.setTownhouseId(Long.parseLong(jwt.getClaim("townHousesId")));
 
         return modelMapper.map(reservationRepository.save(reservation), ReservationDTO.class);
     }
