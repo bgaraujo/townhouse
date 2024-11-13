@@ -1,0 +1,53 @@
+meta {
+  name: save
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8081/townhouses
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWN1cml0eV9tb2RlbCIsInN1YiI6ImViZDQxYzdlLTBkMzctNDFmYS1iNmE2LTM2NDBkNDUyMjMxNSIsInNjb3BlcyI6InJlc2lkZW50IiwiZXhwIjoxNzMxNTE1Njc1LCJpYXQiOjE3MzE1MTIwNzV9.GXyoHwFrn9BRl_F71B7HIarATSHw61WR-VAHwicAJIfziVhqyFIU8N1YwrFtcJqlTUTfujRW_7D0OkOxpWKqqEc2L2WlyKiFthEzwmKzZHC9BsarINlqWhHitAOXr4jq4EG-O1JeGNtWJn45RVvOT39qeWdICSCjdnvGMHoeucDYgHfqee96luHX51u3YGKpApkInIyCXbRhiDaWbOpfKuElZJRtjJ_lZ_o9RWdH9gwoEaGVmiz1QomWgDKLNyAHrkoKktHewX2V22I_YoBDkn9mBPxQ-OeWeDo6LnO6t4yQQRiRD2pgRHsgaDwrC4zjcbMqGwii7uSxFjhN2kwEgg
+}
+
+body:json {
+  {
+    "name":"Vista Park LTDA.",
+    "aliasName":"Condominio Vista Park",
+    "documents":[
+      {
+        "documentType":"CNPJ",
+        "number":"04.894.407/0001-60",
+        "expirationDate":""
+      }
+    ],
+    "addresses":[
+        {
+          "name": "Portaria 1",
+          "postalCode": "12345-678",
+          "street": "Av. Paulista",
+          "number": 1234,
+          "state": "SP",
+          "city": "São Paulo",
+          "complement": "Portaria social",
+          "lat": -23.550520,
+          "lng": -46.633308
+        },
+        {
+          "name": "Portaria 2",
+          "postalCode": "98765-432",
+          "street": "Rua das Flores",
+          "number": 567,
+          "state": "RJ",
+          "city": "Rio de Janeiro",
+          "complement": "Portaria serviços",
+          "lat": -22.906847,
+          "lng": -43.172896
+        }
+    ]
+  }
+}

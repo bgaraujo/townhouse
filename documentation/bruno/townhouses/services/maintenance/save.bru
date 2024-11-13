@@ -1,0 +1,18 @@
+meta {
+  name: save
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8081/1/maintenance
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name":"",
+    "description":""
+  }
+}
